@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     path('admin/', admin.site.urls,name="admin-site"),
     path('', include('employee_information.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
